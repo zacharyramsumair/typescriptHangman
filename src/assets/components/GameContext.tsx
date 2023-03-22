@@ -65,6 +65,8 @@ const GameContextProvider = ({ children }) => {
                 return (
                     <span className="secretSpot" key={key}>
                         &nbsp;
+                    
+
                         {/* {char} */}
                     </span>
                 );
@@ -73,7 +75,8 @@ const GameContextProvider = ({ children }) => {
             if (char == " ") {
                 return (
                     <span className="secretContained" key={key}>
-                        &nbsp; &nbsp; &nbsp;
+                        &nbsp; &nbsp; / &nbsp; &nbsp;
+                     
                     </span>
                 );
             }

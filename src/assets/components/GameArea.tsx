@@ -13,7 +13,7 @@ const GameArea = (props: Props) => {
 	return (
 		<section className="gameArea">
 			{/* <p>GameArea</p> */}
-			<p>{secretWord}</p>
+			{/* <p>{secretWord}</p> */}
 			<p className="secret">{holderText}</p>
 		</section>
 	);
