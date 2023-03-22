@@ -3,10 +3,19 @@ import data from "../movies.json";
 
 interface IGameContext {
 	secretWord: string;
-	lives: number;
-    setLives?:any;
-    setGlobalHolderText?:any;
+    setSecretWord?: React.Dispatch<React.SetStateAction<string>>;
+	lives:number;
+    setLives?:React.Dispatch<React.SetStateAction<number>>;
+    setGlobalHolderText?:React.Dispatch<React.SetStateAction<JSX.Element[] | undefined>>;
     GlobalHolderText ?: JSX.Element[];
+    gameWon:boolean;
+    gameLost:boolean;
+    setGameWon?: React.Dispatch<React.SetStateAction<boolean>>
+    setGameLost?: React.Dispatch<React.SetStateAction<boolean>>
+    getSecretWord?: ()=>string;
+
+
+
 }
 
 // let GameContext = createContext<IGameContext>({
@@ -14,7 +23,7 @@ interface IGameContext {
 // 	lives: 6,
 // });
 
-let GameContext = createContext<IGameContext>({secretWord:"", lives:-1})
+let GameContext = createContext<IGameContext>({secretWord:"", lives:6})
 
 export function useGameContext() {
 	return useContext(GameContext);
@@ -28,10 +37,20 @@ const GameContextProvider = ({ children }) => {
 	let [secretWord, setSecretWord] = useState<string>("");
 	let [lives, setLives] = useState<number>(6);
 	let [GlobalHolderText, setGlobalHolderText] = useState<JSX.Element[]>();
+    let [gameWon, setGameWon] =useState<boolean>(false)
+    let [gameLost, setGameLost] =useState<boolean>(false)
+
+
+    function getSecretWord(){
+
+        return data[Math.floor(Math.random() * (99 - 0)) + 0].title.toUpperCase()
+
+    }
 
 	useEffect(() => {
 		setSecretWord(
-			data[Math.floor(Math.random() * (99 - 0)) + 0].title.toUpperCase()
+			// data[Math.floor(Math.random() * (99 - 0)) + 0].title.toUpperCase()
+            getSecretWord()
 		);
 	}, []);
 
@@ -74,7 +93,7 @@ const GameContextProvider = ({ children }) => {
     // }
 
 	return (
-		<GameContext.Provider value={{ secretWord, lives, setLives, setGlobalHolderText:setGlobalHolderText, GlobalHolderText }}>
+		<GameContext.Provider value={{ secretWord, lives, setLives, setGlobalHolderText, GlobalHolderText, gameWon, gameLost, setGameLost, setGameWon, getSecretWord, setSecretWord }}>
 			{children}
 		</GameContext.Provider>
 	);

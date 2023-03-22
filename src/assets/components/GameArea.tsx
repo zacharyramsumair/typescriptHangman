@@ -4,7 +4,7 @@ import { useGameContext } from "./GameContext";
 type Props = {};
 
 const GameArea = (props: Props) => {
-	let {secretWord, lives , GlobalHolderText:holderText} = useGameContext()
+	let {secretWord, lives , GlobalHolderText:holderText,} = useGameContext()
 
 
 
@@ -13,7 +13,7 @@ const GameArea = (props: Props) => {
 	return (
 		<section className="gameArea">
 			{/* <p>GameArea</p> */}
-			{/* <p>{secretWord}</p> */}
+			<p>{secretWord}</p>
 			<p className="secret">{holderText}</p>
 		</section>
 	);

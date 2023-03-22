@@ -3,6 +3,7 @@ import HangmanStructure from './assets/components/HangmanStructure';
 import GameArea from './assets/components/GameArea';
 import Letters from './assets/components/Letters';
 import GameContextProvider from './assets/components/GameContext';
+import Endscreen from './assets/components/Endscreen';
 
 
 function App() {
@@ -24,7 +25,8 @@ function App() {
     <main className="App">
       <HangmanStructure/>
       <GameArea/>
-      <Letters/>  
+      <Letters/>
+      <Endscreen/>
     </main>
     </GameContextProvider>
 

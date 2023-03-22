@@ -15,6 +15,7 @@ const Letter = (props: Props) => {
     setLives,
 		GlobalHolderText,
 		setGlobalHolderText,
+    gameLost,gameWon
 	} = useGameContext();
 
 	function checkChoice() {
@@ -28,7 +29,7 @@ const Letter = (props: Props) => {
 
 
 
-      if(lives >0){
+      if(lives >0 && !gameWon && !gameLost){
         if (secretWord.includes(props.letter)) {
           let indexes: number[] = [];
           for (let i = 0; i < secretWord.length; i++) {

@@ -1,69 +1,115 @@
-
-
-:root{
-  --correctColor: #248596
+:root {
+	--correctColor: #248596;
 }
 #root {
-  /* max-width: 1280px; */
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+	/* max-width: 1280px; */
+	margin: 0 auto;
+	padding: 2rem;
+	text-align: center;
+	position: relative;
 }
 
-svg{
-  width: 30%;
+svg {
+	width: 30%;
 }
 
-#body{
-  /* display: none; */
+#body {
+	/* display: none; */
 }
 
-section{
-  margin: 1em auto;
+section {
+	margin: 1em auto;
 }
 
-.letters{
-  /* width: 100vw; */
-  display: flex;
-flex-wrap: wrap;
-justify-content: center;
-gap: 0.5em;
+.letters {
+	/* width: 100vw; */
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 0.5em;
 }
 
-.letter{
-  padding: 1em;
-  border: 3px solid #000;
-  /* margin: 0.5em; */
+.letter {
+	padding: 1em;
+	border: 3px solid #000;
+	/* margin: 0.5em; */
+	cursor: pointer;
 }
 
-.secret{
-  
-  display: flex;
-  justify-content: center;
-  gap: 0.5em;
-  /* flex-wrap:wrap ; */
-font-size: 1.5rem;
+.secret {
+	display: flex;
+	justify-content: center;
+	gap: 0.5em;
+	/* flex-wrap:wrap ; */
+	font-size: 1.5rem;
 }
 
-
-.secretSpot{
-  border-bottom: 2px solid #000;
-  display: block;
-  height: 1.2em;
-  width: 2em;
+.secretSpot {
+	border-bottom: 2px solid #000;
+	display: block;
+	height: 1.2em;
+	width: 2em;
 }
 
-
-.usedInCorrect{
-  /* border: 3px solid #000; */
- /* background-color: red; */
- opacity: 0.3;
-
+.usedInCorrect {
+	/* border: 3px solid #000; */
+	/* background-color: red; */
+	opacity: 0.3;
 }
 
+.usedCorrect {
+	border: 3px solid var(--correctColor);
+	color: var(--correctColor);
+	background-color: #d7eff4;
+}
 
-.usedCorrect{
-    border: 3px solid var(--correctColor);
-    color: var(--correctColor);
+.endScreen {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	position: absolute;
+	/* left: 25%;
+  right: 25%;
+  top: 30%; */
 
+	left: 0;
+	right: 0;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50dvw;
+	top: 30%;
+
+	opacity: 0.9;
+	font-size: 2rem;
+	z-index: 1000;
+	background-color: #92c5cf;
+	padding: 2em 0em;
+	text-align: center;
+	color: #000;
+	border: 2px solid #0f4651;
+	justify-content: center;
+}
+
+.endScreen > p {
+	width: 100%;
+	margin: auto;
+	opacity: 1;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.endScreen > button {
+	opacity: 1;
+	cursor: pointer;
+	padding: 1em 0em;
+	margin: 1em 4em;
+	width: 50%;
+	font-size: 1.3rem;
+	/* margin: auto; */
+	transition: 200ms ease color, 200ms ease backgroundColor;
+}
+
+.endScreen > button:hover {
+	color: #fff;
+	background-color: #5c5a5a;
 }
