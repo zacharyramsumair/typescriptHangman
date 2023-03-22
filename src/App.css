@@ -1,3 +1,8 @@
+
+
+:root{
+  --correctColor: #248596
+}
 #root {
   /* max-width: 1280px; */
   margin: 0 auto;
@@ -46,4 +51,19 @@ font-size: 1.5rem;
   display: block;
   height: 1.2em;
   width: 2em;
+}
+
+
+.usedInCorrect{
+  /* border: 3px solid #000; */
+ /* background-color: red; */
+ opacity: 0.3;
+
+}
+
+
+.usedCorrect{
+    border: 3px solid var(--correctColor);
+    color: var(--correctColor);
+
 }

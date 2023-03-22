@@ -7,7 +7,9 @@ const Hangman = (props: Props) => {
 	let {lives} = useGameContext()
 	return (
 		<section>
-			{lives}
+			<h1>HANGMAN</h1>
+			<h2>Guess the Movie</h2>
+			{/* {lives} */}
 
 			<svg
 				id="hangman"
