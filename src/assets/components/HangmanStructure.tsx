@@ -7,8 +7,8 @@ const Hangman = (props: Props) => {
 	let {lives} = useGameContext()
 	return (
 		<section>
-
 			{lives}
+
 			<svg
 				id="hangman"
 				xmlns="http://www.w3.org/2000/svg"
@@ -44,7 +44,7 @@ const Hangman = (props: Props) => {
 				</g>
 
 				<g id="body">
-					<line
+					{lives < 1 &&<line
 						id="right_hand"
 						data-name="right hand"
 						x1="435"
@@ -55,8 +55,8 @@ const Hangman = (props: Props) => {
 						stroke="#231f20"
 						strokeMiterlimit="10"
 						strokeWidth="4"
-					/>
-					<line
+					/>}
+					{lives < 2 &&<line
 						id="left_hand"
 						data-name="left hand"
 						x1="435"
@@ -67,8 +67,8 @@ const Hangman = (props: Props) => {
 						stroke="#231f20"
 						strokeMiterlimit="10"
 						strokeWidth="4"
-					/>
-					<line
+					/>}
+					{lives < 3 &&<line
 						id="right_leg"
 						data-name="right leg"
 						x1="435"
@@ -79,8 +79,8 @@ const Hangman = (props: Props) => {
 						stroke="#231f20"
 						strokeMiterlimit="10"
 						strokeWidth="4"
-					/>
-					<line
+					/>}
+					{lives < 4 &&<line
 						id="left_leg"
 						data-name="left leg"
 						x1="396.5"
@@ -91,8 +91,8 @@ const Hangman = (props: Props) => {
 						stroke="#231f20"
 						strokeMiterlimit="10"
 						strokeWidth="4"
-					/>
-					<circle
+					/>}
+					{lives < 6 &&<circle
 						id="head"
 						cx="435.5"
 						cy="113"
@@ -101,8 +101,8 @@ const Hangman = (props: Props) => {
 						stroke="#231f20"
 						strokeMiterlimit="10"
 						strokeWidth="4"
-					/>
-					<line
+					/>}
+					{lives < 5 &&<line
 						id="torso"
 						x1="435.5"
 						y1="161"
@@ -112,7 +112,7 @@ const Hangman = (props: Props) => {
 						stroke="#231f20"
 						strokeMiterlimit="10"
 						strokeWidth="4"
-					/>
+					/>}
 				</g>
 			</svg>
 		</section>
