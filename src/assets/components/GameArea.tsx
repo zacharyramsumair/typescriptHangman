@@ -1,39 +1,12 @@
-import React, { useState, useEffect, useContext } from "react";
-import { GameContext } from "../../App";
+import React, {  useContext } from "react";
+// import { GameContext } from "../../App";
+import { useGameContext } from "./GameContext";
 type Props = {};
 
 const GameArea = (props: Props) => {
-	let {secretWord, lives} = useContext(GameContext)
+	let {secretWord, lives , GlobalHolderText:holderText} = useGameContext()
 
-	console.log(secretWord + " are here")
-	console.log(lives + " are here")
 
-	let holderText = [...secretWord].map((char: string, key: number) => {
-		if (char.match(/[a-z]/i)) {
-			return (
-				<span className="secretSpot" key={key}>
-					{/* &nbsp; */}
-          {char}
-				</span>
-			)
-		} 
-
-    if (char == " "){
-      return (
-				<span className="secretContained" key={key}>
-				&nbsp; &nbsp; &nbsp;
-				</span>
-			);
-    }
-    
-   
-			return (
-				<span className="secretContained" key={key}>
-					{char}
-				</span>
-			);
-		
-	});
 
 
 

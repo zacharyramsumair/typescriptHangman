@@ -1,10 +1,14 @@
 import React from "react";
-
+import { useGameContext } from "./GameContext";
 type Props = {};
 
 const Hangman = (props: Props) => {
+
+	let {lives} = useGameContext()
 	return (
 		<section>
+
+			{lives}
 			<svg
 				id="hangman"
 				xmlns="http://www.w3.org/2000/svg"
