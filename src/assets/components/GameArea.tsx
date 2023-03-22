@@ -1,13 +1,12 @@
-import React, { useState, useEffect } from "react";
-import data from "../../assets/movies.json";
-
+import React, { useState, useEffect, useContext } from "react";
+import { GameContext } from "../../App";
 type Props = {};
 
 const GameArea = (props: Props) => {
-	let [secretWord, setSecretWord] = useState<string>("");
-	useEffect(() => {
-		setSecretWord(data[Math.floor(Math.random() * (99 - 0)) + 0].title.toUpperCase());
-	}, []);
+	let {secretWord, lives} = useContext(GameContext)
+
+	console.log(secretWord + " are here")
+	console.log(lives + " are here")
 
 	let holderText = [...secretWord].map((char: string, key: number) => {
 		if (char.match(/[a-z]/i)) {
@@ -45,6 +44,8 @@ const GameArea = (props: Props) => {
 			<p className="secret">{holderText}</p>
 		</section>
 	);
+
+	return <p>game Area</p>
 };
 
 export default GameArea;
