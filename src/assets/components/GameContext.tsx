@@ -18,21 +18,19 @@ interface IGameContext {
 
 }
 
-// let GameContext = createContext<IGameContext>({
-// 	secretWord: "THE SECRET",
-// 	lives: 6,
-// });
-
-let GameContext = createContext<IGameContext>({secretWord:"", lives:6})
+let GameContext = createContext<IGameContext>({secretWord:"", lives:6 , gameWon:false, gameLost:false})
 
 export function useGameContext() {
 	return useContext(GameContext);
 }
 
-type Props = {};
+type Props = {
+    children:  React.ReactNode
+};
 
-const GameContextProvider = ({ children }) => {
+const GameContextProvider = ({ children }: Props) => {
 	// main: React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>;
+    // JSX.IntrinsicElements.main: React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>
 
 	let [secretWord, setSecretWord] = useState<string>("");
 	let [lives, setLives] = useState<number>(6);

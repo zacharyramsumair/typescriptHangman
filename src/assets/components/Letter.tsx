@@ -5,7 +5,7 @@ interface Props {
 	letter: string;
 	key: number;
   used: IUsed[];
-  setUsed: React.Dispatch<React.SetStateAction<string[]>>;
+  setUsed:React.Dispatch<React.SetStateAction<IUsed[]>>;
 }
 
 const Letter = (props: Props) => {
@@ -50,13 +50,17 @@ const Letter = (props: Props) => {
               }
             );
     
-            setGlobalHolderText(updatedHolderText);
+            if(setGlobalHolderText != undefined){
+              setGlobalHolderText(updatedHolderText);
+            }
             props.setUsed(prev => [...prev,{ letter:props.letter , correct:true}])
 
     
           }
         }else{
-          setLives(prev => prev -1)
+          if(setLives != undefined){
+            setLives(prev => prev -1)
+          }
           props.setUsed(prev => [...prev,{ letter:props.letter , correct:false}])
 
     

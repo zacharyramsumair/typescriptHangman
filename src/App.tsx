@@ -2,8 +2,10 @@ import './App.css'
 import HangmanStructure from './assets/components/HangmanStructure';
 import GameArea from './assets/components/GameArea';
 import Letters from './assets/components/Letters';
-import GameContextProvider from './assets/components/GameContext';
+import GameContextProvider, { useGameContext } from './assets/components/GameContext';
 import Endscreen from './assets/components/Endscreen';
+
+
 
 
 function App() {
@@ -18,6 +20,7 @@ function App() {
   // if all body parts then die, and you lose
   // if you get it right before you lose all your body parts, you win and play again button
 
+  let {gameWon, gameLost} = useGameContext()
 
 
   return (
@@ -27,6 +30,7 @@ function App() {
       <GameArea/>
       <Letters/>
       <Endscreen/>
+      {/* {gameLost || gameWon && <Endscreen/>} */}
     </main>
     </GameContextProvider>
 

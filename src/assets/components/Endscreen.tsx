@@ -16,10 +16,13 @@ const Endscreen = (props: Props) => {
             for (let char of GlobalHolderText){
             stringHolderText +=char.props.children
             }
-            stringHolderText = stringHolderText.replace(/\s/g, "")
-            secretWord = secretWord.replace(/\s/g, "")
-          
+            stringHolderText = stringHolderText.replace(/\s/g, "").replace(/\//g, "")
+            secretWord = secretWord.replace(/\s/g, "").replace(/\//g, "")
+            console.log(stringHolderText)
+            console.log(secretWord)
             if(stringHolderText==secretWord){
+                console.log(stringHolderText)
+                console.log(secretWord)
                 if(setGameWon !=undefined){
                     setGameWon(true)
                 }
@@ -43,7 +46,6 @@ const Endscreen = (props: Props) => {
         for (let char of GlobalHolderText){
         stuff +=char.props.children
         }
-        console.log(stuff)
   
 
     }
@@ -65,9 +67,8 @@ const Endscreen = (props: Props) => {
         </div>
     }
 
-    // if (gameWon){
-    //     return <div>You Win</div>
-    // }
+    return <></>
+
 };
 
 export default Endscreen;
